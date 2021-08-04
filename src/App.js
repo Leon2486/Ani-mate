@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Router, Route, Switch } from "react-router-dom";
+
+import history from "./history";
+import Navbar from "./components/Navbar";
+import SignInPage from "./components/Pages/SignInPage";
+import SignUpPage from "./components/Pages/SignUpPage";
+import ForumPage from "./components/Pages/ForumPage";
+import CreatePostPage from "./components/Pages/CreatePostPage";
+import ShowPostPage from "./components/Pages/ShowPostPage";
+import EditPostPage from "./components/Pages/EditPostPage";
+import MyPostPage from "./components/Pages/MyPostPage";
+import FollowPostPage from "./components/Pages/FollowPostPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router history={history}>
+      <Navbar />
+      <Switch>
+        <Route path="/signin" exact component={SignInPage} />
+        <Route path="/signup" exact component={SignUpPage} />
+        <Route path="/" exact component={ForumPage} />
+        <Route path="/create" exact component={CreatePostPage} />
+        <Route path="/show/:id" exact component={ShowPostPage} />
+        <Route path="/edit/:id" exact component={EditPostPage} />
+        <Route path="/mypost" exact component={MyPostPage} />
+        <Route path="/follow" exact component={FollowPostPage} />
+      </Switch>
+    </Router>
   );
 }
 
