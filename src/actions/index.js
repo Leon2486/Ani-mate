@@ -27,7 +27,7 @@ export const signOut = () => (dispatch) => {
   dispatch({
     type: "SIGN_OUT_USER",
   });
-  history.push("/forum");
+  history.push("/");
 };
 
 //////////////////////post
