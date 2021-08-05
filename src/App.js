@@ -11,6 +11,7 @@ import ShowPostPage from "./components/Pages/ShowPostPage";
 import EditPostPage from "./components/Pages/EditPostPage";
 import MyPostPage from "./components/Pages/MyPostPage";
 import FollowPostPage from "./components/Pages/FollowPostPage";
+import WelcomePage from "./components/Pages/WelcomePage";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
       <Switch>
         <Route path="/signin" exact component={SignInPage} />
         <Route path="/signup" exact component={SignUpPage} />
-        <Route path="/" exact component={ForumPage} />
+        <Route path="/forum" exact component={ForumPage} />
+        <Route path="/" exact component={WelcomePage} />
         <Route path="/create" exact component={CreatePostPage} />
         <Route path="/show/:id" exact component={ShowPostPage} />
         <Route path="/edit/:id" exact component={EditPostPage} />

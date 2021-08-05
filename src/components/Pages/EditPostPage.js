@@ -67,6 +67,7 @@ function EditPostPage(props) {
         initialValues={{ title: post.title, content: post.content }}
         onSubmit={updatePost}
         editDate={editDate}
+        title="Edit Post"
       />
     </div>
   );

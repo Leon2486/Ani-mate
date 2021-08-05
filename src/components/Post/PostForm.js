@@ -72,7 +72,7 @@ const contentInput = ({ input, meta }) => {
 
 function PostForm(props) {
   const { handleSubmit, author, onSubmit, username, isSignedIn } = props;
-  const { createDate, postId, editDate } = props;
+  const { createDate, postId, editDate, title } = props;
 
   const onPostSubmit = (formValues) => {
     if (createDate) {
@@ -97,7 +97,7 @@ function PostForm(props) {
   return (
     <Container maxWidth="md">
       <Card style={{ padding: "20px", marginTop: "20px" }}>
-        <Typography variant="h4">create post</Typography>
+        <Typography variant="h4">{title}</Typography>
         <CardContent>
           <form action="" onSubmit={handleSubmit(onPostSubmit)}>
             <Field name="title" component={titleInput} />
@@ -108,7 +108,7 @@ function PostForm(props) {
                 variant="contained"
                 color="secondary"
                 component={Link}
-                to="/"
+                to="/forum"
               >
                 cancel
               </Button>

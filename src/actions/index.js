@@ -27,7 +27,7 @@ export const signOut = () => (dispatch) => {
   dispatch({
     type: "SIGN_OUT_USER",
   });
-  history.push("/");
+  history.push("/forum");
 };
 
 //////////////////////post
@@ -46,7 +46,7 @@ export const createPost = (formValues) => async (dispatch) => {
     payload: formValues,
   });
   dispatch(loadingFinish());
-  history.push("/");
+  history.push("/forum");
 };
 
 export const fetchPost = (id) => async (dispatch) => {
@@ -119,6 +119,11 @@ export const updatePost = (formValues) => async (dispatch) => {
 };
 
 export const deletePost = (id) => async (dispatch) => {
+  dispatch({
+    type: "DELETE_POST",
+    payload: id,
+  });
+
   await firebase.firestore().collection("post").doc(id).delete();
   const querySnapshot = await firebase
     .firestore()
@@ -133,11 +138,6 @@ export const deletePost = (id) => async (dispatch) => {
   });
 
   batch.commit();
-
-  dispatch({
-    type: "DELETE_POST",
-    payload: id,
-  });
 };
 
 export const followPost = (postId, userId) => async (dispatch) => {

@@ -13,7 +13,7 @@ export default function Navbar() {
             variant="h6"
             style={{ marginRight: "auto", color: "white" }}
             component={Link}
-            to="/"
+            to="/forum"
           >
             Ani-mate
           </Typography>

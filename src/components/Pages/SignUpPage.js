@@ -17,7 +17,7 @@ export default function SignUpPage() {
         });
       });
     alert("verification sent");
-    history.push("/");
+    history.push("/forum");
   };
 
   return (

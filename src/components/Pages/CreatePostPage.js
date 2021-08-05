@@ -44,7 +44,11 @@ function CreatePostPage({ createPost, isSignedIn, loading }) {
       <Backdrop className={classes.backdrop} open={loading}>
         <CircularProgress color="inherit" />
       </Backdrop>
-      <PostForm onSubmit={createPost} createDate={createDate} />
+      <PostForm
+        onSubmit={createPost}
+        createDate={createDate}
+        title="Create Post"
+      />
     </div>
   );
 }
