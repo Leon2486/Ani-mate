@@ -42,6 +42,9 @@ const useStyle = makeStyles((theme) => ({
     padding: "20px",
     marginBottom: "20px",
   },
+  postBody: {
+    whiteSpace: "pre-wrap",
+  },
   commentTextInput: {
     width: "80%",
     [theme.breakpoints.down("sm")]: {
@@ -87,7 +90,11 @@ function ShowPostPage(props) {
           <Typography gutterBottom variant="h5" component="h2">
             {post.title}
           </Typography>
-          <Typography variant="body2" component="pre">
+          <Typography
+            variant="body2"
+            component="pre"
+            className={classes.postBody}
+          >
             {post.content}
           </Typography>
         </CardContent>
